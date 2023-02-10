@@ -40,7 +40,6 @@ def playRound(board: Board): (Int, Int) = {
   val spot4 = scala.io.StdIn.readLine("Enter a guess for spot 4: ").charAt(0)
 
   val guessBoard = makeBoardFromColors(spot1, spot2, spot3, spot4)
-  println(s"The board is $guessBoard")
 
   scoreGuess(board, guessBoard)
   
