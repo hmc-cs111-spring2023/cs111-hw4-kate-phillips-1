@@ -13,7 +13,7 @@ val validColors = List('B', 'Y', 'R', 'G')
 
 /** Get a random color from the list of valid colors */
 def getRandomColor(): Color = {
-  val rand = scala.util.Random(42)
+  val rand = scala.util.Random()
   val colorIndex = rand.nextInt(4)
   validColors(colorIndex)
 }
@@ -25,7 +25,12 @@ def makeBoardFromColors(c1: Color, c2: Color, c3: Color, c4: Color): Board =
 
 /** Create a random board */
 def getRandomBoard(): Board =
-  
+  val c1 = getRandomColor()
+  val c2 = getRandomColor()
+  val c3 = getRandomColor()
+  val c4 = getRandomColor()
+
+  makeBoardFromColors(c1, c2, c3, c4)
 
 /** Play one round of the game */
 def playRound(board: Board): (Int, Int) =
