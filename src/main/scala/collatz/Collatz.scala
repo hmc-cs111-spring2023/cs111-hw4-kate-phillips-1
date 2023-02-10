@@ -1,13 +1,9 @@
 def collatz(n: Int) = {
-    var result = 0
-    if (n % 2) == 0 then result = n/2
-    else result = (3 * n) + 1
-    result
+    if (n % 2) == 0 then n/2
+    else (3 * n) + 1
 }
 
-
-def collatzCount(n: Int) = {
-    val result = collatz(n)
-    if  result == 1 then 1
-    else 1 + collatzCount(result)
+def collatzCount(n: Int): Int = {
+    if n != 1 then 1 + collatzCount(collatz(n))
+    else 0
 }
