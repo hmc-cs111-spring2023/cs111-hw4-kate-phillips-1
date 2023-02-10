@@ -12,16 +12,20 @@ type Board = String
 val validColors = List('B', 'Y', 'R', 'G')
 
 /** Get a random color from the list of valid colors */
-def getRandomColor(): Color =
-  ???
+def getRandomColor(): Color = {
+  val rand = scala.util.Random(42)
+  val colorIndex = rand.nextInt(4)
+  validColors(colorIndex)
+}
 
 /** Given four colors, make a board from them */
 def makeBoardFromColors(c1: Color, c2: Color, c3: Color, c4: Color): Board =
-  ???
+  val colorSeq = List(c1, c2, c3, c4)
+  colorSeq.mkString
 
 /** Create a random board */
 def getRandomBoard(): Board =
-  ???
+  
 
 /** Play one round of the game */
 def playRound(board: Board): (Int, Int) =
