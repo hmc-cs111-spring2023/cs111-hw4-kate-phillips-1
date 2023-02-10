@@ -33,8 +33,18 @@ def getRandomBoard(): Board =
   makeBoardFromColors(c1, c2, c3, c4)
 
 /** Play one round of the game */
-def playRound(board: Board): (Int, Int) =
-  ???
+def playRound(board: Board): (Int, Int) = {
+  val spot1 = scala.io.StdIn.readLine("Enter a guess for spot 1: ").charAt(0)
+  val spot2 = scala.io.StdIn.readLine("Enter a guess for spot 2: ").charAt(0)
+  val spot3 = scala.io.StdIn.readLine("Enter a guess for spot 3: ").charAt(0)
+  val spot4 = scala.io.StdIn.readLine("Enter a guess for spot 4: ").charAt(0)
+
+  val guessBoard = makeBoardFromColors(spot1, spot2, spot3, spot4)
+  println(s"The board is $guessBoard")
+
+  scoreGuess(board, guessBoard)
+  
+}
 
 /** Score a guess
   *
